@@ -1,4 +1,4 @@
-Spusti powershell
-Skopiruj a spusti: git clone https://gitlab.fi.muni.cz/pv080-students/block-ciphers.git
-Zmen adresar: cd block-ciphers
-Spusti instalaciu: .\StartNotebook_Windows.ps1
+ - Spusti powershell
+ - Skopiruj a spusti: git clone https://github.com/sysox/PoznejFI2025.git
+ - Zmen adresar: cd block-ciphers
+ - Spusti instalaciu: .\StartNotebook_Windows.ps1
