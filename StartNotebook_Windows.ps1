@@ -17,7 +17,7 @@ function InstallJupyterExtensions() {
 
 function StartNotebook() {
 	# start the notebook
-	jupyter notebook
+	jupyter notebook --NotebookApp.token=''
 }
 
 function ActivateVirtual() {
@@ -32,9 +32,20 @@ function InstallRequirements() {
 }
 
 function Main() {
-	ActivateVirtual
-	InstallRequirements
+	try {
+		$at_fi = [System.DirectoryServices.ActiveDirectory.Domain]::GetComputerDomain().Name
+	} catch {
+		$at_fi = ""
+	}
+	if ($at_fi.Equals("ad.fi.muni.cz")) {
+		# activate the virtual environment
+		i:\pv080\seminars\venv\scripts\activate.ps1
+	} else {
+		ActivateVirtual
+		InstallRequirements
+	}
 	InstallJupyterExtensions
+
 	StartNotebook
 }
 
